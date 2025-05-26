@@ -14,7 +14,7 @@ const History = ({ history, handleDelete }) => {
   return (
     <div vlasName="bg-gray-400 p-4 rounded shadow-lg w-full max-w-md">
       <section className="mt-8 bg-blue-150 p-4 rounded shadow">
-        <h2 className="text-xl font-semibold mb-2 bg-gray-400 text-gray-950 p-2 rounded text-center">
+        <h2 className="text-xl font-semibold mb-2 bg-gray-600 text-gray-50 p-2 rounded text-center">
           Riwayat Ringkasan
         </h2>
         {history.length === 0 ? (
@@ -24,7 +24,7 @@ const History = ({ history, handleDelete }) => {
             {history.map((item, index) => (
               <li
                 key={index}
-                className="flex flex-col gap-2 p-2 border-b border-b-gray-800"
+                className="flex flex-col gap-2 p-2 border-b border-b-gray-800 bg-gray-400"
               >
                 <div>
                   <h1 className="text-black font-semibold">
@@ -35,13 +35,13 @@ const History = ({ history, handleDelete }) => {
                 <div className="flex gap-2 flex-wrap mt-2">
                   <button
                     onClick={() => handleDelete(index)}
-                    className="px-2 py-1 bg-red-400 text-white rounded hover:bg-red-500 transition"
+                    className="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition cursor-pointer"
                   >
                     Delete
                   </button>
                   <button
                     onClick={() => handleDownload(index)}
-                    className="px-2 py-1 bg-blue-400 text-white rounded hover:bg-blue-500 transition"
+                    className="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition cursor-pointer"
                   >
                     Download
                   </button>

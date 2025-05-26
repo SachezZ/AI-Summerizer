@@ -65,12 +65,14 @@ const Summarizer = ({
   };
 
   return (
-    <>
-      <p className="mb-4 text-lg">Masukkan teks untuk diringkas:</p>
+    <div className="bg-gray-400 p-4 rounded shadow-lg w-full min-h-[500px]">
+      <p className="mb-4 text-lg bg-gray-600 rounded text-gray-50 p-2 font-semibold">
+        Masukkan teks untuk diringkas:
+      </p>
       <select
         value={model}
         onChange={(e) => setModel(e.target.value)}
-        className="mb-4 p-2 border rounded bg-gray-400"
+        className="mb-4 p-2 border rounded bg-gray-300"
       >
         <option value="deepseek/deepseek-chat-v3-0324:free">DeepSeek V3</option>
         <option value="meta-llama/llama-3.3-70b-instruct:free">
@@ -89,17 +91,24 @@ const Summarizer = ({
               e.target.style.height = "auto";
               e.target.style.height = e.target.scrollHeight + "px";
             }}
-            className="w-full p-3 bg-gray-400 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 break-all size-x-1"
+            className="w-full p-3 bg-gray-300 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 break-all size-x-1"
             rows=""
             placeholder="Masukkan teks di sini"
             style={{ overflow: "hidden" }}
           ></textarea>
           <input
+            id="file-upload"
             type="file"
             accept="image/*,application/pdf"
             onChange={handleImageUpload}
-            className="px-4 py-2 mt-2 bg-gray-400 text-gray-700 rounded hover:bg-gray-300 transition"
+            className="hidden"
           />
+          <label
+            htmlFor="file-upload"
+            className="inline-block px-4 py-2 mt-2 bg-blue-600 text-white rounded cursor-pointer hover:bg-blue-700 transition border mb-4"
+          >
+            Choose File
+          </label>
           {fileLoading && (
             <div className="text-blue-500 mt-2">Sedang memproses file...</div>
           )}
@@ -107,20 +116,20 @@ const Summarizer = ({
         <div className="flex flex-col gap-2">
           <button
             onClick={handleSummarize}
-            className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+            className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition cursor-pointer"
             disabled={fileLoading}
           >
             {fileLoading ? "Tunggu file selesai..." : "Ringkas"}
           </button>
           <button
             onClick={handleReset}
-            className="px-6 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition"
+            className="px-6 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition cursor-pointer"
           >
             Reset
           </button>
         </div>
       </div>
-      <section className="mt-8 bg-gray-400 p-4 rounded shadow">
+      <section className="mt-8 bg-gray-300 p-4 rounded shadow">
         <h2 className="text-xl font-semibold mb-2">Hasil Ringkasan</h2>
         <div className="text-gray-700">
           {summary ? (
@@ -135,7 +144,7 @@ const Summarizer = ({
           )}
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

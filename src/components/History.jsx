@@ -18,7 +18,7 @@ const History = ({ history, handleDelete }) => {
           Riwayat Ringkasan
         </h2>
         {history.length === 0 ? (
-          <p className="text-gray-50">Tidak ada riwayat ringkasan.</p>
+          <p className="text-gray-950">Tidak ada riwayat ringkasan.</p>
         ) : (
           <ul className="list-disc list-inside text-gray-950 flex flex-col gap-2 overflow-y-auto max-h-[400px] pr-2">
             {history.map((item, index) => (

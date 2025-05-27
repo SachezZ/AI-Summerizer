@@ -12,8 +12,8 @@ const History = ({ history, handleDelete }) => {
   };
 
   return (
-    <div vlasName="bg-gray-400 p-4 rounded shadow-lg w-full max-w-md">
-      <section className="mt-8 bg-blue-150 p-4 rounded shadow">
+    <div className="bg-gray-500 font-sans min-h-screen p-4">
+      <section className="mt-8 bg-gray-400 p-4 rounded shadow">
         <h2 className="text-xl font-semibold mb-2 bg-gray-600 text-gray-50 p-2 rounded text-center">
           Riwayat Ringkasan
         </h2>
@@ -22,9 +22,9 @@ const History = ({ history, handleDelete }) => {
         ) : (
           <ul className="list-disc list-inside text-gray-950 flex flex-col gap-2 overflow-y-auto max-h-[400px] pr-2">
             {history.map((item, index) => (
-              <li
+              <l
                 key={index}
-                className="flex flex-col gap-2 p-2 border-b border-b-gray-800 bg-gray-400"
+                className="flex flex-col gap-2 p-2 border-b border-b-gray-800 bg-gray-300"
               >
                 <div>
                   <h1 className="text-black font-semibold">
@@ -46,7 +46,7 @@ const History = ({ history, handleDelete }) => {
                     Download
                   </button>
                 </div>
-              </li>
+              </l>
             ))}
           </ul>
         )}

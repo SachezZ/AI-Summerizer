@@ -91,7 +91,7 @@ const Summarizer = ({
               e.target.style.height = "auto";
               e.target.style.height = e.target.scrollHeight + "px";
             }}
-            className="w-150 p-3 bg-gray-300 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 break-all size-x-4 "
+            className="w-145 p-3 bg-gray-300 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 break-all size-x-4 "
             rows=""
             placeholder="Masukkan teks di sini"
             style={{ overflow: "hidden" }}

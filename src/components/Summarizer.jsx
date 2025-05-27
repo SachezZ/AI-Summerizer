@@ -91,24 +91,11 @@ const Summarizer = ({
               e.target.style.height = "auto";
               e.target.style.height = e.target.scrollHeight + "px";
             }}
-            className="w-full p-3 bg-gray-300 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 break-all size-x-1"
+            className="w-150 p-3 bg-gray-300 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 break-all size-x-4 "
             rows=""
             placeholder="Masukkan teks di sini"
             style={{ overflow: "hidden" }}
           ></textarea>
-          <input
-            id="file-upload"
-            type="file"
-            accept="image/*,application/pdf"
-            onChange={handleImageUpload}
-            className="hidden"
-          />
-          <label
-            htmlFor="file-upload"
-            className="inline-block px-4 py-2 mt-2 bg-blue-600 text-white rounded cursor-pointer hover:bg-blue-700 transition border mb-4"
-          >
-            Choose File
-          </label>
           {fileLoading && (
             <div className="text-blue-500 mt-2">Sedang memproses file...</div>
           )}
@@ -129,6 +116,19 @@ const Summarizer = ({
           </button>
         </div>
       </div>
+      <input
+        id="file-upload"
+        type="file"
+        accept="image/*,application/pdf"
+        onChange={handleImageUpload}
+        className="hidden"
+      />
+      <label
+        htmlFor="file-upload"
+        className="inline-block px-4 py-2 bg-blue-600 text-white rounded cursor-pointer hover:bg-blue-700 transition border mb-4"
+      >
+        Choose File
+      </label>
       <section className="mt-8 bg-gray-300 p-4 rounded shadow">
         <h2 className="text-xl font-semibold mb-2">Hasil Ringkasan</h2>
         <div className="text-gray-700">
